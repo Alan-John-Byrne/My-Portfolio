@@ -1,0 +1,239 @@
+/* Global Styling */
+body {
+    font-family: "Gill Sans", sans-serif;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+/* HERO SECTION CUSTOM STYLING */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.herolinks div i {
+    color: white;
+    font-size: 5rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.herolinks div i:hover {
+    color: rgb(0, 247, 255);
+}
+
+#Alan-Image {
+    border: 0.4rem solid white;
+    transition: box-shadow 0.5s ease-out, border 0.5s ease-out, color 0.5s, font-size 0.2s;
+}
+
+#Alan-Image:hover {
+    border: 0.4rem solid rgb(0, 247, 255);
+    box-shadow: 0px 0px 25px rgb(0, 247, 255) !important;
+}
+
+/* MAIN CONTAINER CUSTOM STYLING */
+
+section {
+    scroll-snap-align: start;
+    padding: 15rem 5rem 15rem 5rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 5rem 4rem 5rem;
+}
+
+/* Rules for making elements appear and disappear */
+.item {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.show {
+    opacity: 1.0;
+    transition: 0.5s;
+}
+
+/* Changing button positioning */
+.follow-buttons-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    right: 1rem;
+    bottom: 2rem;
+}
+
+.follow-buttons-container>* {
+    margin: 1rem;
+}
+
+/* Common styles between buttons */
+#backToTopBtn,
+#contactBtn,
+#downloadCVBtn,
+#bootstrapWorkings {
+    display: none;
+    font-size: 1.8rem;
+    right: 4rem;
+    background-color: white;
+}
+
+/* On Button hover change style */
+#contactBtn:hover,
+#backToTopBtn:hover,
+#downloadCVBtn:hover,
+#bootstrapWorkings:hover {
+    border: solid blue 0.12rem;
+    color: rgb(255, 0, 0);
+    transition: border 0.1s, color 0.1s;
+}
+
+/* Carousel Image sizing */
+.carousel-img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* Removing transitions for popover because they are broken :( */
+.popover {
+    transition: none !important;
+}
+
+/* Making toasts appear above everything */
+.toast-container {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+
+/* Fixing spaceing for text and headers in mobile view for recommendations, and also making image borders shiny. */
+.modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>.card-text {
+    margin: 0rem 2rem 1rem 2rem;
+}
+
+.modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>h5 {
+    margin: 0rem 2rem 1rem 2rem;
+}
+
+.card>a {
+    text-decoration: none;
+    color: black;
+}
+
+.card>a>.card-header>.img-thumbnail {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card>a:hover>.card-header>.img-thumbnail {
+    background-color: rgb(40, 40, 255);
+}
+
+/* Fixing offcanvas backdrop */
+.offcanvas-backdrop {
+    z-index: 1;
+}
+
+/* ScrollSpy example scroll */
+.scrollspy-example {
+    overflow: scroll;
+    height: 200px;
+}
+
+/* Media Query for getting app to work on mobile. */
+@media all and (max-width: 500px) {
+    section {
+        display: flex;
+        justify-content: center;
+    }
+
+    html,
+    body { /*Preventing user from scrolling horizontally on mobile.*/
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
+
+    /* FIXING CARD AND MODAL INNER CARD OVERFLOWS */
+
+    /* Setting the minimum width cards can go to */
+    .card {
+        min-width: 390px !important;
+    }
+
+    /* Fixing child / inner cards width (which was overflowing out of parent card) and margin */
+    .card>.card-body>.row>.inner-card-div>.inner-card {
+        min-width: 1px !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* Setting the minimum width cards can go to */
+    .contact-modal {
+        min-width: 390px !important;
+        font-size: 1rem;
+    }
+
+    /* Fixing child / inner cards width (which was overflowing out of parent modal) and margin */
+    .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card {
+        min-width: 1px !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .h-100 {
+        height: auto !important;
+    }
+
+    /* Fixing spaceing for text in mobile view for recommendations */
+    .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>.card-text {
+        margin: 0rem 0rem 1rem 0rem !important;
+    }
+
+    .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>h5 {
+        margin: 0rem 0rem 1rem 0rem !important;
+    }
+
+    /* Finally centering the recommendations modal */
+    .custom-modal {
+        margin: 5rem !important;
+    }
+
+    /* Making Buttons go to bottom and change their size. */
+    .follow-buttons-container {
+        right: 50%;
+        transform: translate(50%, 50%);
+        bottom: 6rem;
+        flex-direction: row;
+    }
+
+    #backToTopBtn,
+    #contactBtn,
+    #downloadCVBtn,
+    #bootstrapWorkings {
+        font-size: 2.5rem;
+    }
+
+    /* Changing font size of the grade table */
+    .grade-table {
+        font-size: 0.7rem;
+    }
+
+
+    /* DEBUG */
+    /* * {
+        border: 1px solid red;
+    } */
+}

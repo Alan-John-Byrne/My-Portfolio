@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- My solution for correctly hosting on Github Pages. -->
+    <script>
+        function resolvePath(path) {
+            return window.location.hostname.includes('github.io') ? '/My-Portfolio/' + path : path;
+        }
+    </script>
+    <!-- Loading in relevant stylesheets. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="css/custom_styling.css" rel="stylesheet">
+    <!-- Setting Up EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("oZqVO0LeGTa4keYBC");
+        })();
+    </script>
+</head>
+
+<!-- Beginning of Body of page. -->
+
+<body class="body-background" data-spy="scroll" data-target="#navbar-main">
+
+
+
+    <!-- Navigation Bar-->
+    <nav id="navbar-main" class="navbar navbar-expand-md navbar-dark bg-dark px-4 fixed-top">
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a id="homeName" class="navbar-brand" href="#home">Alan Byrne</a>
+            <!-- Toggle Button for Collapsible Navbar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Mobile Collapsible Burger menu Content -->
+            <div class="collapse navbar-collapse bg-dark" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#Education">Education</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#Work-Expierence">Work Experience</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#Projects">Projects</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#HobbiesInterests">Hobbies & Interests</a>
+                    </li>
+                    <!-- Trigger link for contact modal -->
+                    <li class="nav-item text-center">
+                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                            data-bs-target="#contactFormModal">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- OffCanvas Section for explaining bootstrap components used. -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header d-flex justify-content-center align-items-center">
+            <img src="images/Bootstrap Logo.png" alt="" width="30" class="me-2">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bootstrap 5 Components Used</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <!-- Cards were used -->
+                <label for="cardUsed" class="mb-3 fs-2"><strong>Bootstrap Cards</strong></label>
+                <div id="cardUsed" class="card" style="width: 18rem;">
+                    <img src="images/placeholder.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="accordionUsed" class="mb-3 fs-2"><strong>Bootstrap Accordion</strong></label>
+                <!-- Accordions were used -->
+                <div id="accordionUsed" class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion
+                                body.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="carouselExampleControls" class="mb-3 fs-2"><strong>Bootstrap Carousel</strong></label>
+                <!-- Carousels were used -->
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/placeholder.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/placeholder.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/placeholder.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="collapseExample" class="mb-3 fs-2"><strong>Bootstrap Collapse</strong></label>
+                <!-- Collapse was used -->
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        Link with href
+                    </a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Button with data-bs-target
+                    </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but
+                        revealed
+                        when the user activates the relevant trigger.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="collapseExample" class="mb-3 fs-2"><strong>Bootstrap List Groups</strong></label>
+                <!-- List Groups Were Used -->
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">The current
+                        link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                        aria-disabled="true">A disabled link item</a>
+                </div>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="examplemodalbtn" class="mb-3 fs-2"><strong>Bootstrap Modals</strong></label>
+                <!-- Modals Used -->
+                <!-- Button trigger modal -->
+                <button disabled id="examplemodalbtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="navbarUsed" class="mb-3 fs-2"><strong>Bootstrap Nav</strong></label>
+                <!-- Nav Used -->
+                <nav id="navbarUsed" class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1"
+                                        aria-disabled="true">Disabled</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="paginationUsed" class="mb-3 fs-2"><strong>Bootstrap Pagination</strong></label>
+                <!-- Pagination Used -->
+                <nav id="paginationUsed" aria-label="...">
+                    <ul class="pagination pagination-lg">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="popoversUsed" class="mb-3 fs-2"><strong>Bootstrap Popovers</strong></label>
+                <!-- Popovers Used -->
+                <div id="popoversUsed">
+                    <button type="button" class="btn btn-secondary m-2" data-bs-container="body"
+                        data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                        Popover on top
+                    </button>
+                    <button type="button" class="btn btn-secondary m-2" data-bs-container="body"
+                        data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+                        Popover on right
+                    </button>
+                    <button type="button" class="btn btn-secondary m-2" data-bs-container="body"
+                        data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+                        Popover on bottom
+                    </button>
+                    <button type="button" class="btn btn-secondary m-2" data-bs-container="body"
+                        data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+                        Popover on left
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="progressBarUsed" class="mb-3 fs-2"><strong>Bootstrap Progress</strong></label>
+                <!-- Progress Used -->
+                <div id="progressBarUsed" class="progress-group">
+                    <label for="mlDataScience">Progressing.................</label>
+                    <div class="progress my-2" id="mlDataScience">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%"> </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="" class="mb-3 fs-2"><strong>Bootstrap ScrollSpy</strong></label>
+                <!-- ScrollSpy Used -->
+                <nav id="scrollSpy-example" class="navbar navbar-light bg-light px-3">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading1">First</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-bs-spy="scroll" data-bs-target="#scrollSpy-example" data-bs-offset="0"
+                    class="scrollspy-example" tabindex="0">
+                    <h4 id="scrollspyHeading1">First heading</h4>
+                    <p>...</p>
+                    <h4 id="scrollspyHeading2">Second heading</h4>
+                    <p>...</p>
+                    <h4 id="scrollspyHeading3">Third heading</h4>
+                    <p>...</p>
+                    <h4 id="scrollspyHeading4">Fourth heading</h4>
+                    <p>...</p>
+                    <h4 id="scrollspyHeading5">Fifth heading</h4>
+                    <p>...</p>
+                </div>
+            </div>
+
+
+
+            <div class="d-flex justify-content-center align-items-center flex-column mb-5">
+                <label for="" class="mb-3 fs-2"><strong>Bootstrap Toasts</strong></label>
+                <!-- Toasts Used -->
+                <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="images/Bootstrap Logo.png" class="rounded me-2" alt="..." width="25">
+                            <strong class="me-auto">Bootstrap</strong>
+                            <small>11 mins ago</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Hello, world! This is a toast message.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Back to top button and contact button that follow user. -->
+    <div class="follow-buttons-container">
+        <div>
+            <button id="bootstrapWorkings" class="btn rounded-circle" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+                title="View Bootstrap Components Used">
+                <i class="bi bi-gear"></i>
+            </button>
+        </div>
+        <div>
+            <a id="DownloadCV1" class="href-resource" href="data/CV - Alan Byrne.docx" download title="Download CV">
+                <button id="downloadCVBtn" class="btn rounded-circle">
+                    <i class="bi bi-download"></i>
+                </button>
+            </a>
+        </div>
+        <div>
+            <button id="contactBtn" class="btn rounded-circle" data-bs-toggle="modal" data-bs-target="#contactFormModal"
+                title="Contact Me">
+                <i class="bi bi-telephone-fill"></i>
+            </button>
+        </div>
+        <div>
+            <button id="backToTopBtn" class="btn rounded-circle" title="Back To Top">
+                <i class="bi bi-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Recommendations Modal -->
+    <div class="modal recommend-modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Recommendations</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 inner-card-div">
+                            <div class="card inner-card mb-3">
+                                <a href="https://www.linkedin.com/in/brianpgahan/" target="_blank">
+                                    <div class="card-header d-flex flex-row align-items-center justify-content-center">
+                                        <img src="images/Brian Gahan.jpg" class="rounded-circle img-thumbnail mx-3"
+                                            height="auto" width="75" alt="Brian Gahan">
+                                        <small>Brian Gahan, Chief Information Officer</small>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="">What are some of the things Alan does well?</h5>
+                                    <p class="card-text">Agility in terms of ability to do context switching and
+                                        understand different parts of the business and different requirements.</p>
+                                    <p class="card-text">Strong technical skills in software development, has
+                                        delivered
+                                        meaningful results in a number of areas.</p>
+                                    <p class="card-text">Great attitude, pleasure to work with and well liked and
+                                        respected by his colleagues and team mates.</p>
+
+                                    <h5 class="">How could Alan improve?</h5>
+                                    <p class="card-text">Alan is on a great path to build his software development
+                                        skills. Continue on the technical growth whilst also growing business
+                                        analysis
+                                        skills. Expierence in the energy sector would be really beneficial.</p>
+                                    <p class="card-text">Would strongly encourage Alan to stay in touch with
+                                        GridBeyond
+                                        for a potential permanent position when he graduates. We could really
+                                        benefit
+                                        from his skillset.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 inner-card-div">
+                            <div class="card inner-card mb-3">
+                                <a href="https://www.linkedin.com/in/laura-merriman-msc-cipd-%F0%9F%9A%80%F0%9F%9A%80%F0%9F%9A%80-617704b6/"
+                                    target="_blank">
+                                    <div class="card-header d-flex flex-row align-items-center justify-content-center">
+                                        <img src="images/Laura Merriman.jpg" class="rounded-circle img-thumbnail mx-3"
+                                            height="auto" width="75" alt="Laura Merriman">
+                                        <small>Laura Merriman, Global Head of HR at GridBeyond</small>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">I would not hesitate to recommend Alan for future
+                                        employment.
+                                        During his time at GridBeyond he successfully closed out project tasks such
+                                        as
+                                        change management, Solar PV forecasting and HRIS management. His work was
+                                        completed to the highest standards and he built engaging relationships with
+                                        all
+                                        levels of the business including senior stakeholders. We wish Alan the best
+                                        of
+                                        luck moving forward and would rehire if the right opportunity arose.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 inner-card-div">
+                            <div class="card inner-card mb-3">
+                                <a href="https://www.linkedin.com/in/ricardorosa83/" target="_blank">
+                                    <div class="card-header d-flex flex-row align-items-center justify-content-center">
+                                        <img src="images/Ricardo.jpg" class="rounded-circle img-thumbnail mx-3"
+                                            height="auto" width="75" alt="Ricardo Rosa">
+                                        <small>Ricardo Rosa, Desktop Support Engineer at GridBeyond</small>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">I had the opportunity to work with Alan during his
+                                        internship
+                                        at Gridbeyond and I was very impressed by his performance and potential.
+                                        Alan is
+                                        a committed, intelligent, and hard-working professional who always delivers
+                                        high-quality results. He is pro-active in taking initiatives, and learning
+                                        new
+                                        skills. He is always available to help his colleagues with any issues or
+                                        questions. He demonstrates a high level of professionalism and critical
+                                        thinking
+                                        in every task he undertakes. He is also a good colleague who is friendly,
+                                        respectful, humble, and supportive of his team members. Alan is a valuable
+                                        person to any organization and I highly recommend him for any future
+                                        opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Contact Form Modal -->
+    <div class="modal contact-modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">My Contact Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your contact information here -->
+                    <div class="row mt-3">
+                        <p><i class="bi bi-envelope me-3 fs-3"></i>alanjohnbarnesbyrne@gmail.com</p>
+                        <p><i class="bi bi-telephone-fill me-3 fs-3"></i>+1 (353) 85 214 7474</p>
+                    </div>
+                    <div class="row justify-content-start">
+                        <div class="col-2">
+                            <a href="https://www.linkedin.com/in/byrne-alan/" target="_blank"><i
+                                    class="bi bi-linkedin me-4 fs-1"></i></a>
+                        </div>
+                        <div class="col-2">
+                            <a href="https://github.com/x00167885" target="_blank"><i class="bi bi-github fs-1"></i></a>
+                        </div>
+                    </div>
+                    <!-- Add more details as needed -->
+                </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactFormModalLabel">Get In Touch!</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="emailInfo" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="emailInfo" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="+1 (353) 0860000000">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="comments" class="form-label">Comments, Questions?</label>
+                            <textarea class="form-control" id="comments" rows="3" required></textarea>
+                        </div>
+                        <div class="col-md-12 modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                data-bs-target="#contactFormModal" id="CancelContactBtn">Cancel</button>
+                            <a class="href-resource" href="data/CV - Alan Byrne.docx" download><button type="button"
+                                    class="btn btn-success" id="DownloadCV2">Download CV</button></a>
+                            <button type="submit" class="btn btn-primary" id="ContactSubmitBtn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- TOASTS -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="DownloadCVToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success ">
+                <strong class="me-auto text-white">Thank You</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Thank you for downloading my CV.
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-2 p-3">
+        <div id="ContactCancel" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-secondary">
+                <strong class="me-auto text-white">Please keep in touch!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Best Regards, Alan.
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-2 p-3">
+        <div id="ContactSubmit" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary">
+                <strong class="me-auto text-white">Thanks for reaching out!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                I'll get back to you as soon as I can, take care.
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER CONTENT / SPLASH SCREEN -->
+
+    <!-- Hero Image + Social Links -->
+    <section class="container-fluid py-5 item hero-section">
+        <div class="mb-3" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="right"
+            data-bs-content="Hello! I'm Alan and I'm a Computing with Software Development graduate from TUD Tallaght. Thank you for taking the time to have a look at my portfolio.">
+            <img id="Alan-Image" alt="heroimg" src="images/Alan Byrne - Original.jpg"
+                class="rounded-circle img-fluid src-resource" data-bs-toggle="modal" data-bs-target="#contactFormModal">
+        </div>
+        <div class="row g-md-5 herolinks text-center">
+            <div class="col-md-6">
+                <a href="https://www.linkedin.com/in/byrne-alan/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="col-md-6">
+                <a href="https://github.com/x00167885" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <!-- Content for each page is below-->
+    <div data-spy="scroll" data-target="#navbar-main" data-offset="0" class="main_container">
+        <main>
+
+
+
+
+
+            <!-- EDUCATION SECTION -->
+            <section id="Education" class="item">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <img src="images/Graduation Hat.png" alt="Graduation Hat"
+                                    class="rounded-circle mx-auto d-block src-resource"
+                                    style="height: 10rem; width: 10rem;">
+                                <h4 class="card-title fw-bold text-center mb-4">Education</h4>
+                            </div>
+                            <!-- Certificates Column -->
+                            <div class="inner-card-div col-lg-6 col-md-12">
+                                <div class="card inner-card h-100">
+                                    <div class="card-header">
+                                        <h5 class="text-center">Certificates</h5>
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <div class="list-group">
+                                            <a href="https://courses.nvidia.com/certificates/0468996f54864b959d3548c6538163c1/"
+                                                target="_blank" class="list-group-item list-group-item-action"
+                                                aria-current="true">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">Fundamentals of Deep Learning</h6>
+                                                    <small class="text-muted">Nvidia</small>
+                                                    <img src="images/Nvidia Logo.jpg" class="rounded"
+                                                        style="width:3rem; height:3rem;" alt="">
+                                                </div>
+                                                <small>Date Earned: March 14th, 2023</small>
+                                            </a>
+                                            <a href="https://www.linkedin.com/in/byrne-alan/overlay/1635502398298/single-media-viewer/?profileId=ACoAADK4RokBxrrlBaKCtyIExSg0HAvXKirsxV8"
+                                                target="_blank" class="list-group-item list-group-item-action">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">
+                                                        Certificate of Excellence AWS Cloud Computing Competition
+                                                    </h6>
+                                                    <small class="text-muted">Worldskills Ireland</small>
+                                                    <img src="images/World Skills Ireland Logo.jpg" class="rounded"
+                                                        style="width:3rem; height:3rem;" alt="">
+                                                </div>
+                                                <small>Date Earned: September, 2023</small>
+                                            </a>
+                                            <a href="https://www.coursera.org/account/accomplishments/verify/WLPZ63CWZUHN"
+                                                target="_blank" class="list-group-item list-group-item-action">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">HTML, CSS, and JavaScript for Web Developers
+                                                    </h6>
+                                                    <small class="text-muted">The John Hopkins University</small>
+                                                    <img src="images/John Hopkins University.png" class="rounded"
+                                                        style="width:3rem; height:3rem;" alt="">
+                                                </div>
+                                                <small>Date Earned: June 5th, 2021</small>
+                                            </a>
+                                            <a href="https://www.codecademy.com/profiles/Bowser2524/certificates/65f0ff88f4fc58e0536b3b51648dff24"
+                                                target="_blank" class="list-group-item list-group-item-action">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">C# Course</h6>
+                                                    <small class="text-muted">Codecademy</small>
+                                                    <img src="images/Codecademy Logo.jpg" class="rounded"
+                                                        style="width:3rem; height:3rem;" alt="">
+                                                </div>
+                                                <small>Date Earned: May 28, 2022</small>
+                                            </a>
+                                            <a href="https://www.codecademy.com/profiles/Bowser2524/certificates/705dcb15de0da4dd9d9fc4f3274b430e"
+                                                target="_blank" class="list-group-item list-group-item-action">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">JavaScript Course</h6>
+                                                    <small class="text-muted">Codecademy</small>
+                                                    <img src="images/Codecademy Logo.jpg" class="rounded"
+                                                        style="width:3rem; height:3rem;" alt="">
+                                                </div>
+                                                <small>Date Earned: July 8th, 2022</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column End -->
+                            <!-- Tallaght TUD Column -->
+                            <div class="inner-card-div col-lg-6 col-md-12">
+                                <div class="card inner-card">
+                                    <div class="card-header">
+                                        <!-- Image Carousel For TUD Tallaght Images -->
+                                        <div id="carouselExampleControls1" class="carousel carousel-dark slide"
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="images/TUD Logo.png"
+                                                        class="carousel-img src-resource card-img-top" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="images/TUD Image 1.jpg"
+                                                        class="carousel-img src-resource card-img-top" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="images/TUD Image 2.png"
+                                                        class="carousel-img src-resource card-img-top" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="images/TUD Image 3.jpg"
+                                                        class="carousel-img src-resource card-img-top" alt="...">
+                                                </div>
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h5 class="mt-4 text-center">Technological University Dublin, Tallaght Campus
+                                    </h5>
+                                    <p class="card-text" style="padding: 0rem 3rem 0rem 3rem;">
+                                        The Tallaght campus is located in the southwest side of Dublin City,
+                                        occupying
+                                        an 18
+                                        hectare
+                                        site between Old Blessington Road, Belgard Road, and Greenhills Road in
+                                        Tallaght,
+                                        Dublin
+                                        24.
+                                        It hosts over 5,000 undergraduate students. The tallaght campus was
+                                        established
+                                        in
+                                        1992.
+                                    </p>
+                                    <div class="card-footer">
+                                        <!-- Show More -->
+                                        <div class="d-flex justify-content-center my-3">
+                                            <button id="showMoreBtn" class="btn btn-primary" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#ShowGrades"
+                                                aria-expanded="false" aria-controls="ShowGrades">Show
+                                                Grades & Skills</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Column End -->
+                        <!-- Show More Section Of Tallaght TUD-->
+                        <div id="ShowGrades" class="row collapse mt-4">
+                            <div class="inner-card-div col-lg-6 col-md-12">
+                                <div class="card inner-card h-100">
+                                    <!-- Grades  -->
+                                    <div class="card-header">
+                                        <h2 class="text-center">Grades: GPA 3.96</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="tableContainer" class="container">
+                                            <nav aria-label="..." class="d-flex justify-content-center">
+                                                <ul class="pagination pagination-md">
+                                                    <li class="page-item"><button class="page-link">Year 4</button>
+                                                    </li>
+                                                    <li class="page-item"><button class="page-link">Year 3</button>
+                                                    </li>
+                                                    <li class="page-item"><button class="page-link">Year 2</button>
+                                                    </li>
+                                                    <li class="page-item"><button class="page-link">Year 1</button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                            <table class="table grade-table">
+                                                <!-- Table is populated dynamically with Grade Data -->
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inner-card-div col-lg-6 col-md-12">
+                                <div class="card inner-card h-100">
+                                    <!-- Skills -->
+                                    <div class="card-header">
+                                        <h2 class="text-center">Skills</h2>
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <p class="card-text">Below is a brief synopsis of how I would evaluate and
+                                            measure my
+                                            skillset, just from an overall perspective. It's in no way deterministic
+                                            of
+                                            what I'm actually able to do, and should give you an idea of how each of
+                                            these categories stack up when it comes to my general overall ability,
+                                            but
+                                            I'm also partially biased towards some topics compared to others, but
+                                            that's
+                                            just what I like to do.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="progress-group">
+                                            <label for="webDevelopment">Web Development</label>
+                                            <div class="progress my-2" id="webDevelopment">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    style="width: 65%"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-group">
+                                            <label for="mlDataScience">Machine Learning & Data Science</label>
+                                            <div class="progress my-2" id="mlDataScience">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    style="width: 85%"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-group">
+                                            <label for="mobileDev">Mobile Application Development</label>
+                                            <div class="progress my-2" id="mobileDev">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    style="width: 75%"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-group">
+                                            <label for="dataStructuresAlgorithms">Data Structures &
+                                                Algorithms</label>
+                                            <div class="progress my-2" id="dataStructuresAlgorithms">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    style="width: 80%"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    </section>
+
+
+
+
+
+
+    <!-- WORK EXPIERENCE SECTION -->
+    <section id="Work-Expierence" class="item">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/Laptop PNG White Background.png" alt="Graduation Hat"
+                            class="rounded-circle mx-auto d-block src-resource" style="height: 11rem; width: 13rem;">
+                        <h4 class="card-title fw-bold text-center mb-4">Work Expierence</h4>
+                    </div>
+                    <!-- Dunnes Column -->
+                    <div class="inner-card-div col-lg-6 col-md-12">
+                        <div class="card inner-card h-100">
+                            <!-- Image Carousel For Templeogue College -->
+                            <div class="card-header">
+                                <div id="carouselExampleControls4" class="carousel carousel-dark slide"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="images/Dun Image 1.jpg" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/Dun Image 2.jpg" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/Dun Image 3.jpg" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls4" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <h5 class="card-title mt-4 text-center">Dunnes Stores</h5>
+                            <p class="card-text px-5">
+                                I worked for Dunnes Stores from September 2019, through the Covid-19 to Feburary
+                                of 2021. Here I assisted customers and kept the shelves stocked. I assisted the
+                                managers
+                                in taking stock of the latest supply, I worked on checkouts during the busy
+                                seasons such as christmas. I worked mostly on the shop floor stocking shelves
+                                from frozen, deli, dairy and minerals.
+                            </p>
+                            <div class="card-footer d-flex justify-content-center h-100">
+                                <button id="roles" type="button" class="btn btn-secondary">View Roles
+                                    Undertaken</button>
+                                <div id="rolesContent" style="display: none;">
+                                    <ul>
+                                        <li>Assisting Managers in monthly stock counting.</li>
+                                        <li>Carrying out monthly special offer stock change overs.</li>
+                                        <li>Working on checkouts.</li>
+                                        <li>Working between frozen, dairy and deli sections.</li>
+                                        <li>Assisting with customer queries.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column END -->
+                    <!-- GridBeyond Column -->
+                    <div class="inner-card-div col-lg-6 col-md-12">
+                        <div class="card inner-card h-100">
+                            <!-- Image Carousel For TUD Tallaght Images -->
+                            <div class="card-header">
+                                <div id="carouselExampleControls3" class="carousel carousel-dark slide"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="images/Grid Image 1.jpg" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/Grid Image 2.jpg" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/Grid Image 3.png" class="carousel-img src-resource"
+                                                alt="...">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls3" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls3" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center mt-4">GridBeyond</h5>
+                            <p class="card-text px-5">
+                                I worked with a team of 16 people, including data scientists, data engineers,
+                                data
+                                architects, cloud engineers, systems analysts and contractors. During this time
+                                I
+                                gained so much insight into the day to day running of an IT department. I had
+                                the
+                                oppurtunity to partake in data admisitrative work. A phenomenal expierence all
+                                round.
+                            </p>
+                            <div class="card-footer d-flex justify-content-center h-100">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">Show Recommendations</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column END -->
+                </div>
+            </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="Projects" class="item">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="images/Cogs.jpg" alt="Graduation Hat" class=" mx-auto d-block src-resource"
+                            style="height: 8rem; width: 10rem;">
+                        <h4 class="card-title fw-bold text-center mb-3">Projects</h4>
+                    </div>
+                    <div class="inner-card-div col-xl-3 col-md-6 col-sm-12">
+                        <div class="card h-100 inner-card">
+                            <div class="card-header d-flex justify-content-center">
+                                <img src="images/GTU.png" class="card-img-top rounded-circle p-4" alt="GTU"
+                                    style="height: 10rem; width: 10rem;">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title text-center blockquote">GTU</div>
+                                <p class="card-text">GTU or 'Gamer Time Universal' was a project I undertook in
+                                    my second year of college with two of my friends. It was an ecommerce
+                                    application based around the purchasing of games online. The functionality I
+                                    worked on ranged from integrating randomly generated vouchers a customer
+                                    would recieve via email after theyd purchased a certain number of items, to
+                                    adding a search bar. This was all done using the Djano Web Framework.
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <button disabled class="btn btn-info">Preview Unavailable</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-card-div col-xl-3 col-md-6 col-sm-12">
+                        <div class="card h-100 inner-card">
+                            <div class="card-header d-flex justify-content-center">
+                                <img src="images/IBM.png" class="card-img-top rounded p-4" alt="GTU"
+                                    style="height: 10rem; width: 10rem;">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title text-center blockquote">IBM</div>
+                                <p class="card-text">I'm lucky enough and thankful to be able to say that I'm
+                                    working on my final year thesis software development project
+                                    in collaboration with IBM. I cannot disclose what this project is about nor
+                                    what it is intended for due
+                                    to it being under NDA. Languages and Frameworks used, cannot unfortunately
+                                    be discussed either due to the nature of the project.</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <button disabled class="btn btn-info">Preview Unavailable</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-card-div col-xl-3 col-md-6 col-sm-12">
+                        <div class="card h-100 inner-card">
+                            <div class="card-header d-flex justify-content-center">
+                                <img src="images/Pexels.png" class="card-img-top rounded p-4" alt="GTU"
+                                    style="height: 10rem; width: 10rem;">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title text-center blockquote">Pexels</div>
+                                <p class="card-text">I built an application which consumes the Pexels API using
+                                    Microsofts new Blazor WebAssembly C# Framework. Pexels is a place where
+                                    photographers and videoographers upload and provide royalty free media
+                                    content that content creators anyone can use for their own projects. My
+                                    application is there to simplify the searching of said videos and or photos.
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <a href="https://x00167885.github.io/CA3_Ent_App_Dev/" target="_blank"><button
+                                        class="btn btn-info">Preview</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-card-div col-xl-3 col-md-6 col-sm-12">
+                        <div class="card h-100 inner-card">
+                            <div class="card-header d-flex justify-content-center">
+                                <img src="images/John Hopkins University.png" class="card-img-top rounded p-4" alt="GTU"
+                                    style="height: 10rem; width: 10rem;">
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title text-center blockquote">John Hopkins Course Showcase
+                                </div>
+                                <p class="card-text">Early in my software development journey I was not only
+                                    attending college but undertaking multiple online courses when I could.
+                                    I found this particular course to be of great benefit when I was trying to
+                                    grow my web development skills. I wanted to complement my learnings by
+                                    attempting to apply some of these teachings to a small showcase site where I
+                                    got to tell you what I did whilst taking the course.</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <a href="https://alan-john-byrne.github.io/HTML-CSS-and-Javascript-for-Web-Developers/"
+                                    target="_blank"><button class="btn btn-info">Preview</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- HOBBIES & INTERSECTION SECTION -->
+    <section id="HobbiesInterests" class="item">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="images/hobbies.png" alt="Graduation Hat"
+                            class="rounded-circle mx-auto d-block src-resource" style="height: 8rem; width: 10rem;">
+                        <h4 class="card-title fw-bold text-center">Hobbies & Interests</h4>
+                    </div>
+                    <!-- Athletics Column -->
+                    <div class="inner-card-div col-xl-6 col-sm-12">
+                        <!-- Image Carousel For TUD Tallaght Images -->
+                        <div class="card h-100  inner-card">
+                            <div class="card-header">
+                                <div id="carouselExampleControls5" class="carousel carousel-dark slide"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="images/BPAC logo.jpg" class="carousel-img src-resource" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/TAC logo.jpg" class="carousel-img src-resource" alt="...">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls5" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls5" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 3rd Level: TUD Tallaght -->
+                            <h5 class="card-title text-center mt-4">Athletics & Fitness</h5>
+                            <p class="card-text px-5">
+                                I'm very big into fitness. I've ran for two running clubs in the past.
+                                Brothers Pearse from 2014 to the end of track season in 2019, and Tallaght
+                                Athletics Club for a brief time between September 2019 and Janurary 2020. I've
+                                competed in the all irelands and have won a few sprinting medals competing in
+                                the dublins. I sometimes play tennis when I get the chance, but nowadays I do a
+                                lot of road running and cross country.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Column End -->
+                    <!-- Books Column-->
+                    <div class="inner-card-div col-xl-6 col-sm-12">
+                        <!-- Reading Column -->
+                        <div class="card inner-card">
+                            <div class="card-header">
+                                <h5 class="card-title text-center">Reading</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text px-5">
+                                    I got into reading a couple of years ago and have kept it up since, you can
+                                    find
+                                    some of books and accompanying genres below if you are interested. I find it
+                                    helps me keep concentrated and grounded during times of stress such as going
+                                    through college on a daily basis. It's to be a very rewarding habbit.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                                Thriller
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Run On Red by Noelle W. Ihli</li>
+                                                    <li>The Overnight Guest by Heather Gudenkauf</li>
+                                                    <li>Lock Every Door by Riley Sager</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                                aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                Horror
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Home Before Dark by Riley Sager</li>
+                                                    <li>The Haunting Of Ashburn House by Riley Sager</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                aria-expanded="false" aria-controls="flush-collapseThree">
+                                                Fantasy
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingThree"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Harry Potter And The Philosopher's Stone by JK Rowling
+                                                    </li>
+                                                    <li>Harry Potter And The Chamber Of Secrets by JK Rowling
+                                                    </li>
+                                                    <li>Harry Potter And The Prisoner Of Azkaban by JK Rowling
+                                                    </li>
+                                                    <li>Harry Potter And The Goblet Of Fire by JK Rowling</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                                aria-expanded="false" aria-controls="flush-collapseFour">
+                                                Science And Tech
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Exploring Raspberry Pi by Derek Molloy</li>
+                                                    <li>Machine Learning For Absolute Beginners by Oliver
+                                                        Theobald
+                                                    </li>
+                                                    <li>Programming The Raspberry Pi, Third Edition: Getting
+                                                        Started
+                                                        With Python by Simon Monk</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFive">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                                aria-expanded="false" aria-controls="flush-collapseFive">
+                                                Fact or Fiction?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>What Do They Really Know by M.S. Morgan</li>
+                                                    <li>UFOs by Leslie Kean</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingSix">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+                                                aria-expanded="false" aria-controls="flush-collapseSix">
+                                                Interpersonal
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li>Show Your Work! by Austin Kleon</li>
+                                                    <li>Un**** Yourself by Gary John Bishop</li>
+                                                    <li>How To Win Friends & Influence People by Dale Carnegie
+                                                    </li>
+                                                    <li>How To Deal With Difficult People by Gill Hasson</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column End -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    </div> <!-- End of div data-spy="scroll" -->
+
+    <footer class="bg-dark text-center fixed-bottom">
+        <p class="text-white">Site Designed by Alan Byrne 2024</p>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <!-- SMTP JS for sending emails -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- My JavaScript file -->
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
