@@ -1,0 +1,174 @@
+{
+    "Year1": {
+        "columns": [
+            "Subject Semester 1",
+            "Grade",
+            "Subject Semester 2",
+            "Grade"
+        ],
+        "rows": [
+            [
+                "Software Development 1",
+                "A",
+                "Software Development 2",
+                "A"
+            ],
+            [
+                "Computer Architecture",
+                "A",
+                "Systems Analysis",
+                "A"
+            ],
+            [
+                "Visual Design & User Expierence",
+                "A",
+                "Social Media Communications",
+                "A"
+            ],
+            [
+                "Buisness & Information Systems",
+                "A",
+                "Statistics",
+                "A"
+            ],
+            [
+                "Discrete Mathematics 1",
+                "B+",
+                "Database Fundamentals",
+                "A"
+            ],
+            [
+                "Critical Skills Development",
+                "A",
+                "Operating Systems Fundamentals",
+                "A"
+            ]
+        ]
+    },
+    "Year2": {
+        "columns": [
+            "Subject Semester 3",
+            "Grade",
+            "Subject Semester 4",
+            "Grade"
+        ],
+        "rows": [
+            [
+                "Software Development 3",
+                "A",
+                "Software Development 4",
+                "A"
+            ],
+            [
+                "Software Quality Assurance & Testing",
+                "A",
+                "Project",
+                "A"
+            ],
+            [
+                "Networking 1: Network Fundamentals",
+                "A",
+                "Networking 2: Routing & Switching Essentials",
+                "A"
+            ],
+            [
+                "Advanced Database Technologies",
+                "A",
+                "Management Science",
+                "A"
+            ],
+            [
+                "Discrete Mathematics 2",
+                "A",
+                "Database Admin & Analysis",
+                "B+"
+            ],
+            [
+                "Client Side Web Development",
+                "A",
+                "Information Security",
+                "A"
+            ]
+        ]
+    },
+    "Year3": {
+        "columns": [
+            "Subject Semester 5",
+            "Grade",
+            "Subject Semester 6",
+            "Pass"
+        ],
+        "rows": [
+            [
+                "Server Side Web Development",
+                "B+",
+                "Work Placement At GridBeyond",
+                "Yes"
+            ],
+            [
+                "Operating Systems",
+                "A"
+            ],
+            [
+                "Cloud Services & Distributed Computing",
+                "A"
+            ],
+            [
+                "Big Data Technologies",
+                "A"
+            ],
+            [
+                "Data Structures & Algorithms",
+                "A"
+            ],
+            [
+                "Data Analysis",
+                "A"
+            ]
+        ]
+    },
+    "Year4": {
+        "columns": [
+            "Subject Semester 7",
+            "Grade",
+            "Subject Semester 8",
+            "Grade"
+        ],
+        "rows": [
+            [
+                "Project Development",
+                "A",
+                "Final Year Project Thesis",
+                "A"
+            ],
+            [
+                "Enterprise Application Development 1",
+                "A",
+                "Enterprise Application Development 2",
+                "A"
+            ],
+            [
+                "Applied Machine Learning",
+                "A",
+                "Applied Artificial Intelligence & Deep Learning",
+                "A"
+            ],
+            [
+                "Enterprise Performance Architecture",
+                "A",
+                "Algorithms & Computation",
+                "A"
+            ],
+            [
+                "Interactive Media Design",
+                "A",
+                "Computational Theory",
+                "A"
+            ],
+            [
+                "Information Management",
+                "B+"
+            ]
+        ]
+    }
+}
