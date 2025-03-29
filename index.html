@@ -640,19 +640,6 @@
         </button>
       </div>
       <div>
-        <a
-          id="DownloadCV1"
-          class="href-resource"
-          href="data/CV - Alan Byrne.pdf"
-          download
-          title="Download CV"
-        >
-          <button id="downloadCVBtn" class="btn rounded-circle">
-            <i class="bi bi-download"></i>
-          </button>
-        </a>
-      </div>
-      <div>
         <button
           id="contactBtn"
           class="btn rounded-circle"
@@ -942,19 +929,6 @@
                 >
                   Cancel
                 </button>
-                <a
-                  class="href-resource"
-                  href="data/CV - Alan Byrne.pdf"
-                  download
-                >
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="DownloadCV2"
-                  >
-                    Download CV
-                  </button>
-                </a>
                 <button
                   type="submit"
                   class="btn btn-primary"
@@ -970,27 +944,6 @@
     </div>
 
     <!-- TOASTS -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div
-        id="DownloadCVToast"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="toast-header bg-success">
-          <strong class="me-auto text-white">Thank You</strong>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="toast-body">Thank you for downloading my CV.</div>
-      </div>
-    </div>
-
     <div class="toast-container position-fixed bottom-0 end-2 p-3">
       <div
         id="ContactCancel"
@@ -1289,63 +1242,14 @@
                       5,000 undergraduate students.
                     </p>
                     <div class="card-footer">
-                      <!-- Show More -->
-                      <div class="d-flex justify-content-center my-3">
-                        <button
-                          id="showMoreBtn"
-                          class="btn btn-primary"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#ShowGrades"
-                          aria-expanded="false"
-                          aria-controls="ShowGrades"
-                        >
-                          Show Grades & Skills
-                        </button>
-                      </div>
+                      <!-- Show More (Removed)--> 
                     </div>
                   </div>
                 </div>
               </div>
               <!-- Column End -->
               <!-- Show More Section Of Tallaght TUD-->
-              <div id="ShowGrades" class="row collapse mt-4">
-                <div class="inner-card-div col-lg-6 col-md-12">
-                  <div class="card inner-card h-100">
-                    <!-- Grades  -->
-                    <div class="card-header">
-                      <h2 class="text-center">Grades: GPA 3.96</h2>
-                    </div>
-                    <div class="card-body">
-                      <div id="tableContainer" class="container">
-                        <nav
-                          aria-label="..."
-                          class="d-flex justify-content-center"
-                        >
-                          <ul class="pagination pagination-md">
-                            <li class="page-item">
-                              <button class="page-link">Year 4</button>
-                            </li>
-                            <li class="page-item">
-                              <button class="page-link">Year 3</button>
-                            </li>
-                            <li class="page-item">
-                              <button class="page-link">Year 2</button>
-                            </li>
-                            <li class="page-item">
-                              <button class="page-link">Year 1</button>
-                            </li>
-                          </ul>
-                        </nav>
-                        <table class="table grade-table">
-                          <!-- Table is populated dynamically with Grade Data -->
-                          <thead></thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div id="ShowGrades" class="row collapse mt-4"> 
                 <div class="inner-card-div col-lg-6 col-md-12">
                   <div class="card inner-card h-100">
                     <!-- Skills -->
