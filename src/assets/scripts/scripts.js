@@ -1,23 +1,5 @@
 // On load perform the following tasks in prep.
 document.addEventListener('DOMContentLoaded', () => {
-  // Loading all src and hrefs according to their path.
-  let hyperreference_resources = document.querySelectorAll('.href-resource');
-  hyperreference_resources.forEach(resource => {
-    const original_hyperreference = resource.getAttribute('href');
-    const changed_hyperreference = resolvePath(original_hyperreference);
-    resource.setAttribute('href', changed_hyperreference);
-  })
-  let source_resources = document.querySelectorAll('.src-resource');
-  source_resources.forEach(resource => {
-    const original_source = resource.getAttribute('src');
-    const changed_source = resolvePath(original_source);
-    resource.setAttribute('src', changed_source);
-  })
-  // Resolving path for hero section background image on document load.
-  document.querySelector('.hero-section').style.backgroundImage = "url('../../images/Banner Background.jpg')";
-
-
-
   // On load make sure that the roles popover is ready. 
   let rolesButton = document.getElementById('roles');
   let rolesContent = document.getElementById('rolesContent').innerHTML;
@@ -29,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     content: rolesContent  // Setting the content of the roles popover to contents of 'rolesContent' div.
   });
 })
-
 
 // Scrollspy.
 let scrollSpy = new bootstrap.ScrollSpy(document.body, { target: '#navbar-main' })

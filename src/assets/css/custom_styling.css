@@ -1,11 +1,12 @@
 /* Global Styling */
-body {
+:root {
   font-family: "Gill Sans", sans-serif;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
+/* IMPORTANT: Can't use regular scrollspy in react. */
+/* html { */
+/*   scroll-snap-type: y mandatory; */
+/* } */
 
 /* HERO SECTION CUSTOM STYLING */
 
@@ -14,8 +15,10 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background-size 0.5s ease-in-out,
-    background-position 0.5s ease-in-out;
+  /* WARN: related to scroll-spy, move to react version. */
+  /* transition: */
+  /*   background-size 0.5s ease-in-out, */
+  /*   background-position 0.5s ease-in-out; */
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -33,7 +36,10 @@ html {
 
 #Alan-Image {
   border: 0.4rem solid white;
-  transition: box-shadow 0.5s ease-out, border 0.5s ease-out, color 0.5s,
+  transition:
+    box-shadow 0.5s ease-out,
+    border 0.5s ease-out,
+    color 0.5s,
     font-size 0.2s;
 }
 
@@ -45,7 +51,7 @@ html {
 /* MAIN CONTAINER CUSTOM STYLING */
 
 section {
-  scroll-snap-align: start;
+  /* IMPORTANT: NEED TO CHANGE -> scroll-snap-align: start; */
   padding: 15rem 5rem 15rem 5rem;
   min-height: 100vh;
   display: flex;
@@ -55,10 +61,11 @@ section {
 }
 
 /* Rules for making elements appear and disappear */
-.item {
-  opacity: 0;
-  transition: 0.5s;
-}
+/* WARN: Can't do this in react with regular scrollspy. */
+/* .item { */
+/*   opacity: 0; */
+/*   transition: 0.5s; */
+/* } */
 
 .show {
   opacity: 1;
@@ -97,7 +104,9 @@ section {
 #bootstrapWorkings:hover {
   border: solid blue 0.012rem;
   color: rgb(255, 0, 0);
-  transition: border 0.1s, color 0.1s;
+  transition:
+    border 0.1s,
+    color 0.1s;
 }
 
 /* Carousel Image sizing */
@@ -167,10 +176,11 @@ section {
 }
 
 /* ScrollSpy example scroll */
-.scrollspy-example {
-  overflow: scroll;
-  height: 200px;
-}
+/* IMPORTANT: NEED TO CHANGE! */
+/* .scrollspy-example { */
+/*   overflow: scroll; */
+/*   height: 200px; */
+/* } */
 
 /* Media Query for getting app to work on mobile. */
 @media all and (max-width: 500px) {
