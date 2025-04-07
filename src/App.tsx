@@ -1,11 +1,12 @@
 import './App.css'
-import AlanPic from './assets/images/Alan Byrne - Original.jpg'
+import Body from './components/body/Body.tsx'
 
 function App() {
   return (
     <>
-      <h1>Vite + ReactTS Project</h1>
-      <img src={AlanPic} className="logo" alt="Vite logo" />
+      <html lang="en">
+        <Body />
+      </html>
     </>
   );
 }

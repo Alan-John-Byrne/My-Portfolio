@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+/* INFO: Taken from old-portfolio: */
+
+/* Global Styling */
+body {
+  font-family: "Gill Sans", sans-serif;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
