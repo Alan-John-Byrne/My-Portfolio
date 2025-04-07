@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resource.setAttribute('src', changed_source);
     })
     // Resolving path for hero section background image on document load.
-    document.querySelector('.hero-section').style.backgroundImage =  "url('assets/images/Banner Background.jpg')";
+    document.querySelector('.hero-section').style.backgroundImage =  "url('images/Banner Background.jpg')";
 
    
 
