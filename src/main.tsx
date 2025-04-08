@@ -1,6 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+// IMPORTANT: Adding in CSS here instead of 'index.html'
+import "./assets/css/custom_styling.css";
+import "bootstrap-icons/font/bootstrap-icons.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// IMPORTANT: Adding in Scripts here instead of 'index.html'
+// WARN: Don't do this ->'import "./assets/scripts/scripts.js";', 
+// code should be kept seperate in different components.
 
 // NOTE: Creating root component to insert into 'index.html'.
 createRoot(document.getElementById('root')!).render(
