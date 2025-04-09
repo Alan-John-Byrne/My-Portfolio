@@ -1,10 +1,15 @@
 import React from "react";
-import NvidiaLogo from "../assets/images/Nvidia Logo.jpg";
-import WorldSkillsIrelandLogo from "../assets/images/World Skills Ireland Logo.jpg";
-import JohnHopkinsUniLogo from "../assets/images/John Hopkins University.png";
-import CodecademyLogo from "../assets/images/Codecademy Logo.jpg";
+// Cert Images
+import NvidiaLogo from "../../assets/images/Nvidia Logo.jpg";
+import WorldSkillsIrelandLogo from "../../assets/images/World Skills Ireland Logo.jpg";
+import JohnHopkinsUniLogo from "../../assets/images/John Hopkins University.png";
+import CodecademyLogo from "../../assets/images/Codecademy Logo.jpg";
+// Section Header Images
+import GraduationHat from "../../assets/images/Graduation Hat.png";
+import EducationCarousel from "./EducationCarousel";
 
 const EducationSection: React.FC = () => {
+
   return (
     < section id="Education" className="item" >
       <div className="card">
@@ -12,7 +17,7 @@ const EducationSection: React.FC = () => {
           <div className="row">
             <div className="col-lg-12">
               <img
-                src="../assets/images/Graduation Hat.png"
+                src={GraduationHat}
                 alt="Graduation Hat"
                 className="rounded-circle mx-auto d-block src-resource"
                 style={{ height: '10rem', width: '10rem' }}
@@ -132,67 +137,9 @@ const EducationSection: React.FC = () => {
             <div className="inner-card-div col-lg-6 col-md-12">
               <div className="card inner-card">
                 <div className="card-header">
-                  { /*Image Carousel htmlFor TUD Tallaght assets/images */}
-                  <div
-                    id="carouselExampleControls1"
-                    className="carousel carousel-dark slide"
-                    data-bs-ride="carousel"
-                  >
-                    <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <img
-                          src="../assets/images/TUD Logo.png"
-                          className="carousel-img src-resource card-img-top"
-                          alt="..."
-                        />
-                      </div>
-                      <div className="carousel-item">
-                        <img
-                          src="../assets/images/TUD Image 1.jpg"
-                          className="carousel-img src-resource card-img-top"
-                          alt="..."
-                        />
-                      </div>
-                      <div className="carousel-item">
-                        <img
-                          src="../assets/images/TUD Image 2.png"
-                          className="carousel-img src-resource card-img-top"
-                          alt="..."
-                        />
-                      </div>
-                      <div className="carousel-item">
-                        <img
-                          src="../assets/images/TUD Image 3.jpg"
-                          className="carousel-img src-resource card-img-top"
-                          alt="..."
-                        />
-                      </div>
-                    </div>
-                    <button
-                      className="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#carouselExampleControls1"
-                      data-bs-slide="prev"
-                    >
-                      <span
-                        className="carousel-control-prev-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                      className="carousel-control-next"
-                      type="button"
-                      data-bs-target="#carouselExampleControls1"
-                      data-bs-slide="next"
-                    >
-                      <span
-                        className="carousel-control-next-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span className="visually-hidden">Next</span>
-                    </button>
-                  </div>
+                  {/* Education Carousel */}
+                  <EducationCarousel />
+                  {/* End of Education Carousel */}
                 </div>
                 <h5 className="mt-4 text-center">
                   Technological University Dublin, Tallaght Campus
