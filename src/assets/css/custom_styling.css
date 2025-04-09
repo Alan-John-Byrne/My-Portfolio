@@ -50,14 +50,8 @@
 
 /* MAIN CONTAINER CUSTOM STYLING */
 
-section {
-  /* IMPORTANT: NEED TO CHANGE -> scroll-snap-align: start; */
-  padding: 15rem 5rem 15rem 5rem;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 5rem 4rem 5rem;
+.Section-Card {
+  margin: 4rem 5rem 4rem 5rem;
 }
 
 /* Rules for making elements appear and disappear */
@@ -282,7 +276,7 @@ section {
   }
 
   /* DEBUG */
-  /* * {
-        border: 1px solid red;
-    } */
+  * {
+    border: 1px solid red;
+  }
 }
