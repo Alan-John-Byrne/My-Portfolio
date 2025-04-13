@@ -1,107 +1,151 @@
-import React from 'react';
-import WorkExpierenceDunnesCarousel from './WorkExpierenceDunnesCarousel';
-import WorkExpierenceGridBeyondCarousel from './WorkExpierenceGridBeyondCarousel';
+import React, { useState, useRef } from 'react';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import GraduationHat from "../../assets/images/Laptop PNG White Background.png";
+// Custom Components:
+import DunnesRolesPopover from './DunnesRolesPopover';
+import DunnesRecommendationsModal from './DunnesRecommendationsModal';
+import DunnesCarousel from './DunnesCarousel';
+import GridBeyondCarousel from './GridBeyondCarousel';
 
-const WorkExpierenceSection: React.FC = () => {
+const Test: React.FC = () => {
+
+  // RecommendationsModel State management:
+  const [showRecommendationsModal, setShowRecommendationsModal] = useState(false);
+  const toggleRecommendationsModel = () => setShowRecommendationsModal(!showRecommendationsModal);
+
+  // WARN: Custom Popover required, animations are NOT available via parent 'Popover' component. Nor via 'Framer Motion' / 'Motion'.
+  // IMPORTANT: DunnesRolesPopover State management:
+  const [showDunnesRolesPopover, setShowDunnesRolesPopover] = useState(false); // Status for showing the custom popover.
+  const [coords, setCoords] = useState({ top: 0, left: 0 });  // Initial co-ordinates for the button trigger unknown.anyany
+  const dunnesRolesPopoverButtonRef = useRef<HTMLButtonElement>(null);      // Retrieve the actual buttom object from the 'real' DOM.any
+  // Toggler / handler for controlling popover.
+  const toggleDunnesRolesPopover = () => {
+    const rect = dunnesRolesPopoverButtonRef.current?.getBoundingClientRect(); // Retrieving a 'DOMRect' object that surrounds the buttom element.
+    // Checking if the button is mounted, if so we can get a DOMRect object from it.
+    if (rect) {
+      setCoords({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+    } else {
+      setCoords({ top: 0 + window.scrollY, left: 0 + window.scrollX });
+    }
+    // Finally opening or closing the popover.
+    setShowDunnesRolesPopover(!showDunnesRolesPopover);
+  }
+
   return (
-    <section id="Work-Expierence" className="item">
-      <div className="card">
-        <div className="card-body">
-          <div className="row">
-            <div className="col-lg-12">
-              <img
-                src={GraduationHat}
-                alt="Graduation Hat"
-                className="rounded-circle mx-auto d-block src-resource"
-                style={{ height: '11rem', width: '13rem' }}
-              />
-              <h4 className="card-title fw-bold text-center mb-4">
-                Work Expierence
-              </h4>
-            </div>
-            {/* Dunnes Column  */}
-            <div className="inner-card-div col-lg-6 col-md-12">
-              <div className="card inner-card h-100">
-                {/* Image Carousel for Dunnes */}
-                <div className="card-header">
-                  <WorkExpierenceDunnesCarousel />
-                </div>
-                <h5 className="card-title mt-4 text-center">Dunnes Stores</h5>
-                <p className="card-text px-5">
-                  I worked for Dunnes Stores from September 2019, through
-                  the Covid-19 to Feburary of 2021. Here I assisted
-                  customers and kept the shelves stocked. I assisted the
-                  managers in taking stock of the latest supply, I worked on
-                  checkouts during the busy seasons such as christmas. I
-                  worked mostly on the shop floor stocking shelves from
-                  frozen, deli, dairy and minerals.
-                </p>
-                <div
-                  className="card-footer d-flex justify-content-center h-100"
-                >
-                  <button
-                    id="roles"
-                    type="button"
-                    className="btn btn-secondary"
-                  >
-                    View Roles Undertaken
-                  </button>
-                  <div id="rolesContent" style={{ display: 'none' }}>
-                    <ul>
-                      <li>Assisting Managers in monthly stock counting.</li>
-                      <li>
-                        Carrying out monthly special offer stock change
-                        overs.
-                      </li>
-                      <li>Working on checkouts.</li>
-                      <li>
-                        Working between frozen, dairy and deli sections.
-                      </li>
-                      <li>Assisting with customer queries.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Column END  */}
-            {/* GridBeyond Column */}
-            <div className="inner-card-div col-lg-6 col-md-12">
-              <div className="card inner-card h-100">
-                {/* Image Carousel For GridBeyond */}
-                <div className="card-header">
-                  <WorkExpierenceGridBeyondCarousel />
-                </div>
-                <h5 className="card-title text-center mt-4">GridBeyond</h5>
-                <p className="card-text px-5">
-                  I worked with a team of 16 people, including data
-                  scientists, data engineers, data architects, cloud
-                  engineers, systems analysts and contractors. During this
-                  time I gained so much insight into the day to day running
-                  of an IT department. I had the oppurtunity to partake in
-                  data admisitrative work. A phenomenal expierence all
-                  round.
-                </p>
-                <div
-                  className="card-footer d-flex justify-content-center h-100"
-                >
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                  >
-                    Show Recommendations
-                  </button>
-                </div>
-              </div>
-            </div>
-            {/* Column END */}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    <>
+      <Card>
+        <Card.Header>
+          <Row className='text-center'>
+            <Col>
+              <Card.Img style={{ height: '10rem', width: '10rem' }} variant="top" src={GraduationHat} />
+            </Col>
+          </Row>
+          <Row className="text-center">
+            <Col>
+              <Card.Title >Work Expierence</Card.Title>
+            </Col>
+          </Row>
+        </Card.Header>
+        <Card.Body>
+          <Container>
+            {/* Start of 1st Row */}
+            <Row>
+              {/* Dunnes Column */}
+              <Col>
+                <Card >
+                  <Card.Header>
+                    <Card.Title className="text-center">Dunnes Stores</Card.Title>
+                  </Card.Header>
+                  <Card.Body>
+                    <Container >
+                      <Row >
+                        <Col className="d-flex justify-content-center">
+                          <DunnesCarousel />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="d-flex justify-content-center">
+                          <Card.Text>
+                            I worked for Dunnes Stores from September 2019, through
+                            the Covid-19 to Feburary of 2021. Here I assisted
+                            customers and kept the shelves stocked. I assisted the
+                            managers in taking stock of the latest supply, I worked on
+                            checkouts during the busy seasons such as christmas. I
+                            worked mostly on the shop floor stocking shelves from
+                            frozen, deli, dairy and minerals.
+                          </Card.Text>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Card.Body>
+                  <Card.Footer>
+                    <Container>
+                      <Row>
+                        <Col className="d-flex justify-content-center">
+                          {/* DunnesPopOver Toggle */}
+                          <Button ref={dunnesRolesPopoverButtonRef} onClick={toggleDunnesRolesPopover}>{showDunnesRolesPopover ? "Hide Roles" : "View Roles"}</Button>
+                          {/* DunnesPopOver */}
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Card.Footer>
+                </Card>
+                <DunnesRolesPopover showDunnesRolesPopover={showDunnesRolesPopover} coords={coords} />
+              </Col>
+              {/* End of Dunnes Column */}
+              {/* GridBeyond column */}
+              {/* IMPORTANT: Put 'd-flex' on the containing column, and 'flex-fill' on an inner card to make that card stretch to fill the space. */}
+              <Col className='d-flex'>
+                <Card className='flex-fill'>
+                  <Card.Header>
+                    <Card.Title className="text-center">GridBeyond</Card.Title>
+                  </Card.Header>
+                  <Card.Body >
+                    <Container>
+                      <Row>
+                        <Col className="d-flex justify-content-center">
+                          <GridBeyondCarousel />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col className="d-flex justify-content-center">
+                          <Card.Text>
+                            I worked with a team of 16 people, including data
+                            scientists, data engineers, data architects, cloud
+                            engineers, systems analysts and contractors. During this
+                            time I gained so much insight into the day to day running
+                            of an IT department. I had the oppurtunity to partake in
+                            data admisitrative work. A phenomenal expierence all
+                            round.
+                          </Card.Text>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Card.Body>
+                  <Card.Footer>
+                    <Container>
+                      <Row>
+                        <Col className="d-flex justify-content-center">
+                          <Button variant="primary" onClick={toggleRecommendationsModel}>Show Recommendations</Button>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </Card.Footer>
+                </Card>
+              </Col>
+              {/* End of GridBeyond column */}
+            </Row>
+          </Container>
+        </Card.Body >
+      </Card >
+      <DunnesRecommendationsModal show={showRecommendationsModal} handleClose={toggleRecommendationsModel} />
+    </>
+  )
 }
 
-export default WorkExpierenceSection;
+export default Test;
+
