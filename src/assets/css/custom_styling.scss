@@ -76,7 +76,7 @@
   bottom: 2rem;
 }
 
-.follow-buttons-container > * {
+.follow-buttons-container>* {
   margin: 1rem;
 }
 
@@ -127,40 +127,24 @@
 }
 
 /* Fixing spacing for text and headers in mobile view for recommendations, and also making image borders shiny. */
-.modal
-  > .modal-dialog
-  > .modal-content
-  > .modal-body
-  > .row
-  > .inner-card-div
-  > .inner-card
-  > .card-body
-  > .card-text {
+.modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>.card-text {
   margin: 0rem 2rem 1rem 2rem;
 }
 
-.modal
-  > .modal-dialog
-  > .modal-content
-  > .modal-body
-  > .row
-  > .inner-card-div
-  > .inner-card
-  > .card-body
-  > h5 {
+.modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>h5 {
   margin: 0rem 2rem 1rem 2rem;
 }
 
-.card > a {
+.card>a {
   text-decoration: none;
   color: black;
 }
 
-.card > a > .card-header > .img-thumbnail {
+.card>a>.card-header>.img-thumbnail {
   transition: background-color 0.3s ease-in-out;
 }
 
-.card > a:hover > .card-header > .img-thumbnail {
+.card>a:hover>.card-header>.img-thumbnail {
   background-color: rgb(40, 40, 255);
 }
 
@@ -198,7 +182,7 @@
   }
 
   /* Fixing child / inner cards width (which was overflowing out of parent card) and margin */
-  .card > .card-body > .row > .inner-card-div > .inner-card {
+  .card>.card-body>.row>.inner-card-div>.inner-card {
     min-width: 1px !important;
     margin-bottom: 2rem !important;
   }
@@ -210,13 +194,7 @@
   }
 
   /* Fixing child / inner cards width (which was overflowing out of parent modal) and margin */
-  .modal
-    > .modal-dialog
-    > .modal-content
-    > .modal-body
-    > .row
-    > .inner-card-div
-    > .inner-card {
+  .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card {
     min-width: 1px !important;
     margin-bottom: 2rem !important;
   }
@@ -226,27 +204,11 @@
   }
 
   /* Fixing spaceing for text in mobile view for recommendations */
-  .modal
-    > .modal-dialog
-    > .modal-content
-    > .modal-body
-    > .row
-    > .inner-card-div
-    > .inner-card
-    > .card-body
-    > .card-text {
+  .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>.card-text {
     margin: 0rem 0rem 1rem 0rem !important;
   }
 
-  .modal
-    > .modal-dialog
-    > .modal-content
-    > .modal-body
-    > .row
-    > .inner-card-div
-    > .inner-card
-    > .card-body
-    > h5 {
+  .modal>.modal-dialog>.modal-content>.modal-body>.row>.inner-card-div>.inner-card>.card-body>h5 {
     margin: 0rem 0rem 1rem 0rem !important;
   }
 
@@ -280,3 +242,11 @@
     border: 1px solid red;
   }
 }
+
+// WARN: Overriding Bootstrap5 CSS.
+.wider-accordion-header {
+  width: 25rem;
+}
+
+// Importing the rest of bootstrap.
+@import "bootstrap/scss/bootstrap";
