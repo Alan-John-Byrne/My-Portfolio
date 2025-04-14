@@ -20,11 +20,14 @@ const DunnesRolesPopover: React.FC<CustomPopover> = ({ showDunnesRolesPopover, c
         <div
           style={{
             position: 'absolute',
-            top: coords.top,
-            left: coords.left - 180,
-            backgroundColor: 'rgba(255, 100, 100, 0.85)',
+            top: coords.top - 90,
+            left: coords.left - 265,
+            backgroundColor: 'white',
+            borderStyle: 'solid',
+            borderColor: 'lightgray',
+            borderWidth: '0.01rem',
             padding: '0.5rem',
-            borderRadius: '2rem',
+            borderRadius: '1rem',
             color: 'black',
           }}>
           <Popover.Header as="h3">

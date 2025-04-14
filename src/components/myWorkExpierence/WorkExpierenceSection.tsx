@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import GraduationHat from "../../assets/images/Laptop PNG White Background.png";
+import LapTop from "../../assets/images/Laptop.png";
 // Custom Components:
 import DunnesRolesPopover from './DunnesRolesPopover';
 import DunnesRecommendationsModal from './DunnesRecommendationsModal';
@@ -37,11 +37,11 @@ const Test: React.FC = () => {
 
   return (
     <>
-      <Card>
+      <Card className="Section-Card">
         <Card.Header>
           <Row className='text-center'>
             <Col>
-              <Card.Img style={{ height: '10rem', width: '10rem' }} variant="top" src={GraduationHat} />
+              <Card.Img style={{ height: '10rem', width: '10rem' }} variant="top" src={LapTop} />
             </Col>
           </Row>
           <Row className="text-center">

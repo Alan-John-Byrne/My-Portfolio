@@ -5,7 +5,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import TUDLogo from '../../assets/images/TUD Logo.png'
+import BrianGahan from '../../assets/images/Brian Gahan.jpg'
+import LauraMerriman from '../../assets/images/Laura Merriman.jpg'
+import RicardoRossa from '../../assets/images/Ricardo Rossa.jpg'
 
 interface DunnesRecommendationsModalProps {
   show: boolean,
@@ -26,7 +28,16 @@ const DunnesRecommendationsModal: React.FC<DunnesRecommendationsModalProps> = ({
               <Container>
                 <Row className="d-flex align-items-center">
                   <Col className="d-flex justify-content-center">
-                    <Image src={`${TUDLogo}`} rounded-circle style={{ width: "4rem", height: "4rem", border: "0.3rem solid red", borderRadius: "3rem", objectFit: "cover" }} />
+                    <Image src={`${BrianGahan}`}
+                      rounded-circle
+                      style={{
+                        width: "4rem",
+                        height: "4rem",
+                        borderStyle: "solid",
+                        borderColor: "red",
+                        borderWidth: "0.1rem",
+                        borderRadius: "3rem"
+                      }} />
                   </Col>
                   <Col>
                     Brian Gahan, CIO (<strong><u>My Manager</u></strong>)
@@ -51,7 +62,16 @@ const DunnesRecommendationsModal: React.FC<DunnesRecommendationsModalProps> = ({
               <Container>
                 <Row className="d-flex align-items-center">
                   <Col className="d-flex justify-content-center">
-                    <Image src={`${TUDLogo}`} rounded-circle style={{ width: "4rem", height: "4rem", border: "0.3rem solid red", borderRadius: "3rem", objectFit: "cover" }} />
+                    <Image src={`${LauraMerriman}`}
+                      rounded-circle
+                      style={{
+                        width: "4rem",
+                        height: "4rem",
+                        borderStyle: "solid",
+                        borderColor: "red",
+                        borderWidth: "0.1rem",
+                        borderRadius: "3rem"
+                      }} />
                   </Col>
                   <Col>
                     Laura Merriman
@@ -77,7 +97,16 @@ const DunnesRecommendationsModal: React.FC<DunnesRecommendationsModalProps> = ({
               <Container>
                 <Row className="d-flex align-items-center">
                   <Col className="d-flex justify-content-center">
-                    <Image src={`${TUDLogo}`} rounded-circle style={{ width: "4rem", height: "4rem", border: "0.3rem solid red", borderRadius: "3rem", objectFit: "cover" }} />
+                    <Image src={`${RicardoRossa}`}
+                      rounded-circle
+                      style={{
+                        width: "4rem",
+                        height: "4rem",
+                        borderStyle: "solid",
+                        borderColor: "red",
+                        borderWidth: "0.1rem",
+                        borderRadius: "3rem"
+                      }} />
                   </Col>
                   <Col>
                     Ricardo Rosa
