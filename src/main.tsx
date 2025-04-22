@@ -2,8 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 // IMPORTANT: Adding in CSS here instead of 'index.html'
-import "./assets/css/custom_styling.css";
-import "bootstrap-icons/font/bootstrap-icons.css"
+import "./assets/css/custom_styling.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // IMPORTANT: Adding in Scripts here instead of 'index.html'

@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AlanPic from '../assets/images/Alan Byrne - Original.jpg';
 import BannerBackground from '../assets/images/Banner Background.jpg';
+import { useInView } from 'react-intersection-observer';
 
-const HeroSection: React.FC = () => {
+interface EducationSectionProps {
+  handleSectionInView: (sectionName: string) => void;
+}
+
+const HeroSection: React.FC<EducationSectionProps> = ({ handleSectionInView }) => {
+
+  // NOTE: Intersection observer for 'when in view' animation.
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1
+  })
+
+  useEffect(() => {
+    if (inView) {
+      handleSectionInView("");
+    }
+  }, [inView])
 
   return (
     <section className="container-fluid py-5 item hero-section" style={{ backgroundImage: `url( ${BannerBackground} )` }}>

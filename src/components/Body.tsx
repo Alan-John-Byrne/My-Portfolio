@@ -1,18 +1,22 @@
-import React from 'react';
-import Navbar from './Navbar.tsx';
+import React, { useState } from 'react';
+import Navbar from './myNavBar/Navbar.tsx';
 import HeroSection from './HeroSection.tsx';
 import MainContent from './MainContent.tsx';
-import ProjectsSection from './ProjectsSection.tsx';
-import HobbiesAndInterestsSection from './HobbiesAndInterestsSection.tsx';
 
 const Body: React.FC = () => {
+
+  // NOTE: Tracking which section is currently being viewed.
+  // Helps with highlighting appropriate navbar links.
+  const [activeSection, setActiveSection] = useState<string>("");
+  const handleSectionInView = (sectionName: string) => {
+    setActiveSection(sectionName);
+  }
+
   return (
     <>
-      <Navbar />
-      <HeroSection />
-      <MainContent />
-      <ProjectsSection />
-      <HobbiesAndInterestsSection />
+      <Navbar activeSection={activeSection} />
+      <HeroSection handleSectionInView={handleSectionInView} />
+      <MainContent handleSectionInView={handleSectionInView} />
     </>
   );
 }
